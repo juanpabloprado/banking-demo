@@ -14,7 +14,7 @@ public class BankTests {
     assertEquals(expected, actual, MONEY_DELTA);
   }
 
-  public static class BankContext {
+  public static abstract class BankContext {
     @Before
     public void setCurrentInterestRate() throws Exception {
       Bank.currentInterestRate = 2.75;
@@ -41,7 +41,7 @@ public class BankTests {
     }
   }
 
-  public static class OldAccountContext extends BankContext {
+  public static abstract class OldAccountContext extends BankContext {
     protected Account oldAccount;
 
     @Before
